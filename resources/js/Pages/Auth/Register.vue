@@ -127,6 +127,7 @@ const submit = () => {
                     class="mt-1 block w-full"
                     required
                 >
+                    <option value="">---</option>
                     <option value="Técnico Auditor Forense e Investigador Criminal">Técnico Auditor Forense e Investigador Criminal</option>
                     <option value="Licenciatura en Investigación Criminal y Seguridad">Licenciatura en Investigación Criminal y Seguridad</option>
                     <option value="Licenciatura en Ciencias Jurídicas ">Licenciatura en Ciencias Jurídicas </option>
