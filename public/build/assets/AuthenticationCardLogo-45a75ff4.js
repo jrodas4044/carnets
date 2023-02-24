@@ -1,0 +1,1 @@
+import{o as a,c as e,w as t,u as r,j as s,a as o}from"./app-cf086219.js";const c=o("h1",null,"Registro para creación de Carné Virtual UDEO",-1),l={__name:"AuthenticationCardLogo",setup(n){return(_,i)=>(a(),e(r(s),{href:"/",class:"text-2xl text-gray-700"},{default:t(()=>[c]),_:1}))}};export{l as _};

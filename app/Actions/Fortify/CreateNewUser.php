@@ -27,6 +27,7 @@ class CreateNewUser implements CreatesNewUsers
             'dpi' => ['required','string'],
             'carne' => ['required', 'string'],
             'carrera' => ['required', 'string'],
+            'ciclo' => ['required', 'string'],
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
@@ -37,6 +38,7 @@ class CreateNewUser implements CreatesNewUsers
             'dpi' => $input['dpi'],
             'carne' => $input['carne'],
             'carrera' => $input['carrera'],
+            'ciclo' => $input['ciclo'],
         ]);
     }
 }

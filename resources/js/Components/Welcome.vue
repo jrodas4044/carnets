@@ -45,6 +45,10 @@ function PrintElem(elem)
                    <strong>Carné: </strong> {{ $page.props.auth.user.carne }} <br>
                    <strong>DPI: </strong> {{  $page.props.auth.user.dpi }} <br>
                    <strong>Carrera:</strong> {{ $page.props.auth.user.carrera }} <br>
+                   <strong>Ciclo Asignado:</strong> {{ $page.props.auth.user.ciclo }} <br>
+                    <span class="mt-2">
+                        <strong class="mt-2">Vigencia:</strong> <span class="px-4 py-1 bg-red-500 rounded-full text-white font-bold">Enero-Junio 2023</span>
+                    </span>
                </span>
            </div>
 
@@ -52,7 +56,7 @@ function PrintElem(elem)
                 <QRCodeVue3
                     :width="150"
                     :height="150"
-                    :value="`http://estudiantes.udeoberistain.edu.gt/${$page.props.auth.user.carne}`"
+                    :value="`http://estudiantes.udeoberistain.edu.gt/validate/${$page.props.auth.user.id}`"
                     :qrOptions="{ typeNumber: 0, mode: 'Byte', errorCorrectionLevel: 'H' }"
                     :imageOptions="{ hideBackgroundDots: true, imageSize: 0.4, margin: 0 }"
                     :dotsOptions="{

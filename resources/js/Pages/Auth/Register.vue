@@ -123,7 +123,6 @@ const submit = () => {
                 <InputLabel for="Carrera" value="Carrera" />
                 <select
                     id="carrera"
-                    type="text"
                     class="mt-1 block w-full"
                     required
                     v-model="form.carrera"
@@ -131,12 +130,39 @@ const submit = () => {
                     <option value="">---</option>
                     <option value="Técnico Auditor Forense e Investigador Criminal">Técnico Auditor Forense e Investigador Criminal</option>
                     <option value="Licenciatura en Investigación Criminal y Seguridad">Licenciatura en Investigación Criminal y Seguridad</option>
-                    <option value="Licenciatura en Ciencias Jurídicas ">Licenciatura en Ciencias Jurídicas </option>
                 </select>
                 <InputError class="mt-2" :message="form.errors.carrera" />
             </div>
 
+            <div class="mt-4">
+                <InputLabel for="ciclo" value="Ciclo" />
+                <select
+                    id="ciclo"
+                    class="mt-1 block w-full"
+                    required
+                    v-model="form.ciclo"
+                >
+                    <option value="">---</option>
+                    <template v-if="form.carrera == 'Técnico Auditor Forense e Investigador Criminal'">
+                        <option value="1er Semestre">1ero </option>
+                        <option value="2do Semestre">2do</option>
+                        <option value="3er Semestre">3ero</option>
+                        <option value="4to Semestre">4to</option>
+                        <option value="5to Semestre">5to</option>
+                        <option value="6to Semestre">6to</option>
+                    </template>
 
+                    <template v-if="form.carrera == 'Licenciatura en Investigación Criminal y Seguridad'">
+                        <option value="7mo  Semestre">7mo</option>
+                        <option value="8vo Semestre">8vo</option>
+                        <option value="9no Semestre">8no.</option>
+                        <option value="10mo Semestre">10mo</option>
+                    </template>
+                </select>
+
+                <InputError class="mt-2" :message="form.errors.ciclo" />
+
+            </div>
 
             <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-4">
                 <InputLabel for="terms">
