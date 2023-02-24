@@ -13,26 +13,33 @@ defineProps({
     <Head title="Welcome" />
 
     <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-        <div v-if="canLogin" class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
-            <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</Link>
 
-            <template v-else>
-                <Link :href="route('login')" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Ingresar</Link>
+      <div>
+          <div class="max-w-7xl mx-auto p-6 lg:p-8">
+              <div class="flex justify-center">
+                  <h1 class="text-center text-white text-2xl">
+                      UdeO Beristain <br>
+                      Facultad de Ciencias Forenses e Investigación Criminal
 
-                <Link v-if="canRegister" :href="route('register')" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Registrarse</Link>
-            </template>
-        </div>
+                  </h1>
+              </div>
+          </div>
 
-        <div class="max-w-7xl mx-auto p-6 lg:p-8">
-            <div class="flex justify-center">
-               <h1 class="text-center text-white text-2xl">
-                   UdeO Beristain <br>
-                   Facultad de Ciencias Forenses e Investigación Criminal
-               </h1>
-            </div>
+          <div v-if="canLogin" class="p-6">
+              <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</Link>
 
+              <template v-else>
+                    <div class="flex  justify-center">
+                        <Link :href="route('login')" class="bg-blue-500 p-4 text-white font-semibold   hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
 
-        </div>
+                            Ingresar
+                        </Link>
+
+                        <Link v-if="canRegister" :href="route('register')" class=" bg-green-500 ml-4 p-4 text-white  font-semibold  hover:text-gray-900  dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Registrarse</Link>
+                    </div>
+              </template>
+          </div>
+      </div>
     </div>
 </template>
 

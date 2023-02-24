@@ -126,6 +126,7 @@ const submit = () => {
                     type="text"
                     class="mt-1 block w-full"
                     required
+                    v-model="form.carrera"
                 >
                     <option value="">---</option>
                     <option value="Técnico Auditor Forense e Investigador Criminal">Técnico Auditor Forense e Investigador Criminal</option>
