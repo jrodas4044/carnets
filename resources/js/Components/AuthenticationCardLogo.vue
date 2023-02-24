@@ -6,6 +6,6 @@ import { Link } from '@inertiajs/vue3';
     <Link :href="'/'"
         class="text-2xl text-gray-700"
     >
-        <h1>Registro para creación de Carné Virtual</h1>
+        <h1>Registro para creación de Carné Virtual UDEO</h1>
     </Link>
 </template>
