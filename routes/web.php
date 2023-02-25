@@ -44,7 +44,7 @@ Route::middleware([
 
 
 Route::get('/validate/{id}', function ($userId) {
-    $user = \App\Models\User::find($userId);
+    $user = \App\Models\User::findOrFail($userId);
 
     return Inertia::render('Carne', [
         "user" => $user
