@@ -1,36 +1,18 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import QRCodeVue3 from "qrcode-vue3";
-
-window.jsPDF = window.jspdf.jsPDF;
-var docPDF = new jsPDF();
-
-function PrintElem(elem)
-{
-    var elementHTML = document.querySelector("#print");
-    docPDF.html(elementHTML, {
-        callback: function(docPDF) {
-            docPDF.save('carne.pdf');
-        },
-        x: 15,
-        y: 15,
-        width: 170,
-        windowWidth: 650
-    });
-
-}
 </script>
 
 <template>
-    <div id="print">
+    <div id="print" class="bg-white " >
         <div class="mt-6">
             <div class="w-full items-center justify-items-center text-center">
-                <img src="/head.png" alt="UDEO" width="400" style="margin:auto">
+                <img src="/head.png" alt="UDEO" style="margin:auto; width: 150px;">
             </div>
 
         </div>
 
-        <div class="p-6 lg:p-8 bg-white border-b border-gray-200 flex items-center justify-center">
+        <div class="p-6 lg:p-8  border-b border-gray-200 flex items-center justify-center">
             <div class="">
                 <img
                     :src="$page.props.auth.user.profile_photo_url"
@@ -41,13 +23,13 @@ function PrintElem(elem)
                <h2 class="mt-2 text-l font-medium text-blue-900 uppercase font-semibold">
                    {{ $page.props.auth.user.name }}
                </h2>
-               <span class="text-left text-sm">
+               <span class="text-left text-sm text-gray-800">
                    <strong>Carné: </strong> {{ $page.props.auth.user.carne }} <br>
                    <strong>DPI: </strong> {{  $page.props.auth.user.dpi }} <br>
                    <strong>Carrera:</strong> {{ $page.props.auth.user.carrera }} <br>
                    <strong>Ciclo Asignado:</strong> {{ $page.props.auth.user.ciclo }} <br>
                     <span class="mt-2">
-                        <strong class="mt-2">Vigencia:</strong> <span class="px-4 py-1 bg-red-500 rounded-full text-white font-bold">Enero-Junio 2023</span>
+                        <strong class="mt-2">Vigencia:</strong> <span class="px-4 py-1 text-red-500 font-bold">Enero-Junio 2023</span>
                     </span>
                </span>
            </div>
@@ -92,11 +74,12 @@ function PrintElem(elem)
     </div>
 
     <div class="m-4 text-center">
-        <button
-            @click='PrintElem'
+        <a
+            :href="route('makePdf', $page.props.auth.user.id)"
             class="p-4 bg-green-600 text-white"
+            download
         >
             Imprimir
-        </button>
+        </a>
     </div>
 </template>

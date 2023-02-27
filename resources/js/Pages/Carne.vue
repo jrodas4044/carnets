@@ -7,7 +7,7 @@ defineProps({ user: Object })
 
 <template>
     <div class="flex h-screen  justify-center items-center w-screen">
-        <div id="print" class="lg:w-1/2 mx-auto shadow-2xl   border-t-4 border-blue-400" >
+        <div id="print" class="lg:w-1/2 mx-auto shadow-2xl  border-t-4 border-blue-400" >
             <div class="mt-6">
                 <div class="w-full items-center justify-items-center text-center">
                     <img src="/head.png" alt="UDEO" width="400" style="margin:auto">

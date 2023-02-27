@@ -39,6 +39,9 @@ Route::middleware([
         'users' => \App\Http\Controllers\UserController::class
     ]);
 
+    Route::get('/pdf/{id}', [\App\Http\Controllers\UserController::class, 'makePdf'])
+    ->name('makePdf');
+
 });
 
 
@@ -49,4 +52,4 @@ Route::get('/validate/{id}', function ($userId) {
     return Inertia::render('Carne', [
         "user" => $user
     ]);
-});
+})->name('validate');

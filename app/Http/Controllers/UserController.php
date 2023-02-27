@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Endroid\QrCode\Builder\Builder;
+use Endroid\QrCode\Writer\BinaryWriter;
+use Endroid\QrCode\Writer\SvgWriter;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Yajra\DataTables\DataTables;
@@ -74,5 +78,27 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function makePdf($id)
+    {
+        $user = \App\Models\User::findOrFail($id);
+        $qr = Builder::create()
+            ->data(route('validate', ['id' => $user->id]))
+            //->writer(new  BinaryWriter())
+            ->size(150)
+            ->margin(10)
+            ->build()
+         ;
+
+        $qr->saveToFile(storage_path("app/public/qr-{$user->carne}.png"));
+
+       // return view('pdf.carne')->with(['qr' => $qr->getDataUri()]);
+
+        $pdf = Pdf::loadView('pdf.carne', [
+            'qr' =>  $qr->getDataUri(),
+            'user' => $user
+        ]);
+        return $pdf->download("carne-{$user->carne}.pdf");
     }
 }
