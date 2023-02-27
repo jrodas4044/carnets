@@ -7,15 +7,23 @@ defineProps({ user: Object })
 
 <template>
     <div class="flex h-screen  justify-center items-center w-screen">
-        <div id="print" class="lg:w-1/2 mx-auto shadow-2xl  border-t-4 border-blue-400" >
-            <div class="mt-6">
-                <div class="w-full items-center justify-items-center text-center">
-                    <img src="/head.png" alt="UDEO" width="400" style="margin:auto">
+        <div
+            style="
+                background-color: #666;
+                background-image:url('http://estudiantes.udeoberistain.edu.gt/fondo.png');
+                background-size: cover;
+
+            "
+            id="print" class="lg:w-1/2 mx-auto shadow-2xl" >
+            <div class="mt-32 pt-12">
+                <div class="w-full items-center justify-items-center text-center p-4 font-bold text-blue-900">
+                    <img class="mx-auto" src="/logo.png">
+                    <h1 class="text-2xl">Facultad de Ciencias Forenses <br> e Investigación Criminal.</h1>
                 </div>
 
             </div>
 
-            <div class="p-6 lg:p-8 bg-white border-b border-gray-200 flex items-center justify-center">
+            <div class="p-6 lg:p-8  border-b border-gray-200 flex items-center justify-center">
                 <div class="">
                     <img
                         :src="user.profile_photo_url"
@@ -23,6 +31,9 @@ defineProps({ user: Object })
                     />
                 </div>
                 <div class="ml-4">
+                    <h2 class="mt-2 text-l font-medium text-blue-900 uppercase font-semibold">
+                        Carné Virtual
+                    </h2>
                     <h2 class="mt-2 text-l font-medium text-blue-900 uppercase font-semibold">
                         {{ user.name }}
                     </h2>

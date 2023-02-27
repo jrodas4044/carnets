@@ -9,7 +9,6 @@ import QRCodeVue3 from "qrcode-vue3";
             <div class="w-full items-center justify-items-center text-center">
                 <img src="/head.png" alt="UDEO" style="margin:auto; width: 150px;">
             </div>
-
         </div>
 
         <div class="p-6 lg:p-8  border-b border-gray-200 flex items-center justify-center">
@@ -20,7 +19,10 @@ import QRCodeVue3 from "qrcode-vue3";
                 />
             </div>
             <div class="ml-4">
-               <h2 class="mt-2 text-l font-medium text-blue-900 uppercase font-semibold">
+                <h2 class="mt-2 text-l font-medium text-blue-900 uppercase font-semibold">
+                    Carné Virtual
+                </h2>
+                <h2 class="mt-2 text-l font-medium text-blue-900 uppercase font-semibold">
                    {{ $page.props.auth.user.name }}
                </h2>
                <span class="text-left text-sm text-gray-800">
