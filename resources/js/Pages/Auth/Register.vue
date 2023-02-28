@@ -145,18 +145,13 @@ const submit = () => {
                     <option value="">---</option>
                     <template v-if="form.carrera == 'Técnico Universitario Auditor Forense en Investigaciones Criminales'">
                         <option value="1er Semestre">1ero </option>
-                        <option value="2do Semestre">2do</option>
                         <option value="3er Semestre">3ero</option>
-                        <option value="4to Semestre">4to</option>
                         <option value="5to Semestre">5to</option>
-                        <option value="6to Semestre">6to</option>
                     </template>
 
                     <template v-if="form.carrera == 'Licenciatura en Investigación Criminal y Seguridad'">
                         <option value="7mo  Semestre">7mo</option>
-                        <option value="8vo Semestre">8vo</option>
                         <option value="9no Semestre">8no.</option>
-                        <option value="10mo Semestre">10mo</option>
                     </template>
                 </select>
 
