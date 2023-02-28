@@ -68,7 +68,7 @@ import QRCodeVue3 from "qrcode-vue3";
         <div class="w-full">
             <div class="bg-gray-200 p-6">
                 <p class="text-sm">
-                    Para verificar la autenticidad de este carne virtual, escanea el siguiente código QR con tu dispositivo móvil y serás redirigido a una página donde podrás verificar la información del alumno y la validez del documento. Esto asegura que el carnet virtual que posees es auténtico y válido para su uso en la Facultad de Ciencias Forenses e Investigación Criminal de la Universidad de Occidente ext. Antonio Beristain
+                    Para verificar la autenticidad de este carné virtual, escanea el siguiente código QR con tu dispositivo móvil y serás redirigido a una página donde podrás verificar la información del alumno y la validez del documento. Esto asegura que el carné virtual que posees es auténtico y válido para su uso en la Facultad de Ciencias Forenses e Investigación Criminal de la Universidad de Occidente ext. Antonio Beristain
                 </p>
             </div>
         </div>

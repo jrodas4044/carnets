@@ -128,7 +128,7 @@ const submit = () => {
                     v-model="form.carrera"
                 >
                     <option value="">---</option>
-                    <option value="Técnico Auditor Forense e Investigador Criminal">Técnico Auditor Forense e Investigador Criminal</option>
+                    <option value="Técnico Universitario Auditor Forense en Investigaciones Criminales">Técnico Universitario Auditor Forense en Investigaciones Criminales</option>
                     <option value="Licenciatura en Investigación Criminal y Seguridad">Licenciatura en Investigación Criminal y Seguridad</option>
                 </select>
                 <InputError class="mt-2" :message="form.errors.carrera" />
@@ -143,7 +143,7 @@ const submit = () => {
                     v-model="form.ciclo"
                 >
                     <option value="">---</option>
-                    <template v-if="form.carrera == 'Técnico Auditor Forense e Investigador Criminal'">
+                    <template v-if="form.carrera == 'Técnico Universitario Auditor Forense en Investigaciones Criminales'">
                         <option value="1er Semestre">1ero </option>
                         <option value="2do Semestre">2do</option>
                         <option value="3er Semestre">3ero</option>

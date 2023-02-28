@@ -86,14 +86,14 @@ class UserController extends Controller
         $qr = Builder::create()
             ->data(route('validate', ['id' => $user->id]))
             //->writer(new  BinaryWriter())
-            ->size(150)
-            ->margin(10)
+            ->size(100)
+            ->margin(5)
             ->build()
          ;
 
         $qr->saveToFile(storage_path("app/public/qr-{$user->carne}.png"));
 
-       // return view('pdf.carne')->with(['qr' => $qr->getDataUri()]);
+       //return view('pdf.carne')->with(['qr' => $qr->getDataUri(), 'user' => $user]);
 
         $pdf = Pdf::loadView('pdf.carne', [
             'qr' =>  $qr->getDataUri(),
