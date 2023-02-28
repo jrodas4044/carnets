@@ -70,7 +70,7 @@
 
        <section style="clear:both">
            <div style="
-         padding: 15px;
+         padding: 16px;
          font-size:13px;
          font-weight: bold;
          text-align: center;
