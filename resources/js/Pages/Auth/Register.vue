@@ -151,7 +151,7 @@ const submit = () => {
 
                     <template v-if="form.carrera == 'Licenciatura en Investigación Criminal y Seguridad'">
                         <option value="7mo  Semestre">7mo</option>
-                        <option value="9no Semestre">8no.</option>
+                        <option value="9no Semestre">9no.</option>
                     </template>
                 </select>
 
